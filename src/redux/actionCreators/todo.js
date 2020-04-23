@@ -3,6 +3,20 @@ import db from '../../db';
 
 // -------- Classic action creators --------
 
+// Load tasks
+
+export const loadTasks = payload => ({
+	type: types.LOAD_TASKS,
+	payload
+})
+
+// Add a task
+
+export const addTask = payload => ({
+	type: types.ADD_TASK,
+	payload
+});
+
 // Change input value
 
 export const changeInput = payload => ({
@@ -17,35 +31,50 @@ export const changeCheckbox = payload => ({
 	payload
 });
 
-export const addTask = payload => ({
-	type: types.ADD_TASK,
-	payload
-});
-
-
 // -------- Async action creators --------
 
-// Load tasks
+// Load tasks from the database
 
-export const loadTasks = () => dispatch => {
+export const loadTasksFromDb = () => dispatch => {
 	db.table('todos')
       .toArray()
 			.then((todos) => 
-				dispatch({
-					type: types.LOAD_TASKS,
-					payload: todos
-				})
+				dispatch(loadTasks(todos))
 			);
 };
 
-// Add a task
+// Add a task to the database
 
-export const addTaskToDb = payload => dispatch => {
-	console.log('payload', payload);
-	const todoToAdd = { text: payload, completed: false }
+export const addTaskToDb = (id, text) => dispatch => {
+	const todoToAdd = { id, text, completed: false };
+
 	db.table('todos')
 			.add(todoToAdd)
-			.then((AddTask) => 
-				dispatch(AddTask(payload))
+			.then((id) =>
+				dispatch(addTask(Object.assign({}, todoToAdd, { id })))
 			);
 };
+
+// Edit task's checkbox state in the database
+// const { 
+// 	target: { 
+// 		name 
+// 	}
+// } = action.payload;
+// console.log('state', state.todos);
+// const newTodos = Object.assign([], state.todos);
+// let itemToModify = newTodos.find(todo => todo.id === +name);
+// itemToModify.completed = !itemToModify.completed;
+
+
+export const changeCheckboxInDb = ({ target: { name }}) => async dispatch => {
+
+		let itemToModify;
+		await db.todos.toArray().then((res) => itemToModify = Object.assign([], res).find(todo => todo.id === +name));
+
+    db.table('todos')
+      .update(name, { completed: true })
+      .then(() => {
+				db.todos.toArray().then((res) => dispatch(changeCheckbox(res)))
+			});
+  };

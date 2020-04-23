@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 // Action creators
 
 import {
-  changeCheckbox,
+  changeCheckboxInDb,
   changeInput,
 	addTaskToDb
 } from './redux/actionCreators/todo';
@@ -19,23 +19,23 @@ const mapState = state => ({
 });
 
 const mapDispatch = {
-  changeCheckbox,
+  changeCheckboxInDb,
   changeInput,
   addTaskToDb
 };
 
 function App(props) {
 
-  const { changeCheckbox, changeInput, addTaskToDb, placeholder, taskInput, todos } = props;
+  const { changeCheckboxInDb, changeInput, addTaskToDb, placeholder, taskInput, todos } = props;
 
   return (
     <div className="App">
         <div className="todo">
           <div className="todo_new-task">
-            <NewTask taskInput={taskInput} placeholder={placeholder} onChange={changeInput} onAdd={() => addTaskToDb(taskInput)} />
+            <NewTask taskInput={taskInput} placeholder={placeholder} onChange={changeInput} onAdd={() => addTaskToDb(todos.length, taskInput)} />
           </div>
           <div className="todo_task-list">
-            <TaskList onCheckboxChange={changeCheckbox} todos={todos} />
+            <TaskList onCheckboxChange={changeCheckboxInDb} todos={todos} />
           </div>
         </div>
     </div>

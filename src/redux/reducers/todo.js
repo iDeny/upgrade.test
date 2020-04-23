@@ -14,7 +14,6 @@ export default function(state = defaultState, action) {
 	switch (action.type) {
 
 		case types.LOAD_TASKS: {
-			console.log('load', action.payload);
 			return {
 				...state,
 				todos: action.payload
@@ -22,13 +21,13 @@ export default function(state = defaultState, action) {
 		}
 
 		case types.ADD_TASK: {
-			console.log('action', action.payload);
+			const { id, text } = action.payload;
 			return {
 				...state,
 				todos: [...state.todos, {
-					completed: false,
-					id: state.todos.length,
-					text: action.payload
+					id,
+					text,
+					completed: false
 				}],
 				taskInput: ''
 			};
@@ -48,19 +47,9 @@ export default function(state = defaultState, action) {
 		}
 
 		case types.CHANGE_CHECKBOX: {
-			const { 
-				target: { 
-					name 
-				}
-			} = action.payload;
-
-			const newTodos = Object.assign([], state.todos);
-    	let itemToModify = newTodos.find(todo => todo.id === +name);
-			itemToModify.completed = !itemToModify.completed;
-			
 			return {
 				...state,
-				todos: newTodos
+				todos: action.payload
 			}
 		}
 

@@ -1,15 +1,16 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import todo from './redux/reducers/todo';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import todo from './redux/reducers/todo';
+import { loadTasksFromDb } from './redux/actionCreators/todo';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { loadTasks } from './redux/actionCreators/todo';
 
-const store = createStore(todo);
-loadTasks();
+const store = createStore(todo, applyMiddleware(thunk));
+store.dispatch(loadTasksFromDb());
 
 ReactDOM.render(
 	<Provider store={store}>
