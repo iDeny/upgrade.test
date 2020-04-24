@@ -24,10 +24,10 @@ export const changeInput = payload => ({
 	payload
 });
 
-// Change checkbox state
+// Toggle complete status
 
-export const changeCheckbox = payload => ({
-	type: types.CHANGE_CHECKBOX,
+export const toggleComplete = payload => ({
+	type: types.TOGGLE_COMPLETE,
 	payload
 });
 
@@ -49,32 +49,26 @@ export const addTaskToDb = (id, text) => dispatch => {
 	const todoToAdd = { id, text, completed: false };
 
 	db.table('todos')
-			.add(todoToAdd)
-			.then((id) =>
+			.add(todoToAdd, id)
+			.then((id) => 
 				dispatch(addTask(Object.assign({}, todoToAdd, { id })))
 			);
 };
 
-// Edit task's checkbox state in the database
-// const { 
-// 	target: { 
-// 		name 
-// 	}
-// } = action.payload;
-// console.log('state', state.todos);
-// const newTodos = Object.assign([], state.todos);
-// let itemToModify = newTodos.find(todo => todo.id === +name);
-// itemToModify.completed = !itemToModify.completed;
+// Toggle complete status in the database
 
+export const toggleCompleteInDb = ({ target: { name }}) => async dispatch => {
+	let targetId = +name;
+	let itemCompleteStatus;
+	await db.todos.get(targetId, (item) => {
+		itemCompleteStatus = item.completed;
+	});
 
-export const changeCheckboxInDb = ({ target: { name }}) => async dispatch => {
-
-		let itemToModify;
-		await db.todos.toArray().then((res) => itemToModify = Object.assign([], res).find(todo => todo.id === +name));
-
-    db.table('todos')
-      .update(name, { completed: true })
-      .then(() => {
-				db.todos.toArray().then((res) => dispatch(changeCheckbox(res)))
-			});
-  };
+  db.todos
+    .update(targetId, { completed: !itemCompleteStatus })
+    .then((updated) => 
+			db.todos.toArray()
+			.then((newTodos) => 
+				dispatch(toggleComplete(newTodos)))
+		);
+};

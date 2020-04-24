@@ -22,6 +22,7 @@ export default function(state = defaultState, action) {
 
 		case types.ADD_TASK: {
 			const { id, text } = action.payload;
+			
 			return {
 				...state,
 				todos: [...state.todos, {
@@ -46,7 +47,7 @@ export default function(state = defaultState, action) {
 			}
 		}
 
-		case types.CHANGE_CHECKBOX: {
+		case types.TOGGLE_COMPLETE: {
 			return {
 				...state,
 				todos: action.payload
