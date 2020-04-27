@@ -72,3 +72,5 @@ export const toggleCompleteInDb = ({ target: { name }}) => async dispatch => {
 				dispatch(toggleComplete(newTodos)))
 		);
 };
+
+{};
