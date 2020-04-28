@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/upgrade.test/static/css/main.216f7419.chunk.css",
+    "main.js": "/upgrade.test/static/js/main.b7546647.chunk.js",
+    "main.js.map": "/upgrade.test/static/js/main.b7546647.chunk.js.map",
+    "runtime-main.js": "/upgrade.test/static/js/runtime-main.7ec40020.js",
+    "runtime-main.js.map": "/upgrade.test/static/js/runtime-main.7ec40020.js.map",
+    "static/js/2.0ed087c9.chunk.js": "/upgrade.test/static/js/2.0ed087c9.chunk.js",
+    "static/js/2.0ed087c9.chunk.js.map": "/upgrade.test/static/js/2.0ed087c9.chunk.js.map",
+    "index.html": "/upgrade.test/index.html",
+    "precache-manifest.04ec5b37bd732b92b8ecbb85eeb5c0e1.js": "/upgrade.test/precache-manifest.04ec5b37bd732b92b8ecbb85eeb5c0e1.js",
+    "service-worker.js": "/upgrade.test/service-worker.js",
+    "static/css/main.216f7419.chunk.css.map": "/upgrade.test/static/css/main.216f7419.chunk.css.map",
+    "static/js/2.0ed087c9.chunk.js.LICENSE.txt": "/upgrade.test/static/js/2.0ed087c9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7ec40020.js",
+    "static/js/2.0ed087c9.chunk.js",
+    "static/css/main.216f7419.chunk.css",
+    "static/js/main.b7546647.chunk.js"
+  ]
+}
