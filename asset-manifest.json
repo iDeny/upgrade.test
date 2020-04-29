@@ -9,9 +9,11 @@
     "static/js/2.0ed087c9.chunk.js.map": "/upgrade.test/static/js/2.0ed087c9.chunk.js.map",
     "index.html": "/upgrade.test/index.html",
     "precache-manifest.04ec5b37bd732b92b8ecbb85eeb5c0e1.js": "/upgrade.test/precache-manifest.04ec5b37bd732b92b8ecbb85eeb5c0e1.js",
+    "precache-manifest.0a0ad85b5631b2dc03890e7bf48b76c0.js": "/upgrade.test/precache-manifest.0a0ad85b5631b2dc03890e7bf48b76c0.js",
     "service-worker.js": "/upgrade.test/service-worker.js",
     "static/css/main.216f7419.chunk.css.map": "/upgrade.test/static/css/main.216f7419.chunk.css.map",
-    "static/js/2.0ed087c9.chunk.js.LICENSE.txt": "/upgrade.test/static/js/2.0ed087c9.chunk.js.LICENSE.txt"
+    "static/js/2.0ed087c9.chunk.js.LICENSE.txt": "/upgrade.test/static/js/2.0ed087c9.chunk.js.LICENSE.txt",
+    "sw.js": "/upgrade.test/sw.js"
   },
   "entrypoints": [
     "static/js/runtime-main.7ec40020.js",
