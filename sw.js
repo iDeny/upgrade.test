@@ -1,6 +1,4 @@
-importScripts("/upgrade.test/precache-manifest.03302bec065f16204b7f7ed180a38436.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
-
-workbox.precaching.precacheAndRoute(self.__precacheManifest);
+importScripts("/upgrade.test/precache-manifest.4105c23f0d17a201814dbccd3299df39.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 self.addEventListener('notificationclose', function (e) {
 	var notification = e.notification;
@@ -21,4 +19,9 @@ self.addEventListener('notificationclick', function (e) {
 		notification.close();
 	}
 });
+
+// custom adjustments
+console.log('my adjustments');
+
+workbox.precaching.precacheAndRoute(self.__precacheManifest);
 
