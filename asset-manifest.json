@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/upgrade.test/static/css/main.216f7419.chunk.css",
-    "main.js": "/upgrade.test/static/js/main.2691079a.chunk.js",
-    "main.js.map": "/upgrade.test/static/js/main.2691079a.chunk.js.map",
+    "main.js": "/upgrade.test/static/js/main.bf49b8f6.chunk.js",
+    "main.js.map": "/upgrade.test/static/js/main.bf49b8f6.chunk.js.map",
     "runtime-main.js": "/upgrade.test/static/js/runtime-main.7ec40020.js",
     "runtime-main.js.map": "/upgrade.test/static/js/runtime-main.7ec40020.js.map",
     "static/js/2.0ed087c9.chunk.js": "/upgrade.test/static/js/2.0ed087c9.chunk.js",
     "static/js/2.0ed087c9.chunk.js.map": "/upgrade.test/static/js/2.0ed087c9.chunk.js.map",
     "index.html": "/upgrade.test/index.html",
-    "precache-manifest.c1971ce5cc3b4652b4f4300ff5692a92.js": "/upgrade.test/precache-manifest.c1971ce5cc3b4652b4f4300ff5692a92.js",
+    "precache-manifest.3763c0d337beb3ed146b352e5a9252dd.js": "/upgrade.test/precache-manifest.3763c0d337beb3ed146b352e5a9252dd.js",
     "service-worker.js": "/upgrade.test/service-worker.js",
     "static/css/main.216f7419.chunk.css.map": "/upgrade.test/static/css/main.216f7419.chunk.css.map",
     "static/js/2.0ed087c9.chunk.js.LICENSE.txt": "/upgrade.test/static/js/2.0ed087c9.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7ec40020.js",
     "static/js/2.0ed087c9.chunk.js",
     "static/css/main.216f7419.chunk.css",
-    "static/js/main.2691079a.chunk.js"
+    "static/js/main.bf49b8f6.chunk.js"
   ]
 }
