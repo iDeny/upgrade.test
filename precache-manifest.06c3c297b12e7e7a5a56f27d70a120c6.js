@@ -1,13 +1,13 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "40353153f7a1e1f3f75e96c8eb98aaad",
+    "revision": "c1b14a1baf16ba358faa59af4ff0407c",
     "url": "/upgrade.test/index.html"
   },
   {
-    "url": "/upgrade.test/precache-manifest.8407a2c4b3dd45b917505e2769322e20.js"
+    "url": "/upgrade.test/precache-manifest.12d6b27500a31cfb36ea12dad67324a5.js"
   },
   {
-    "revision": "7a6ac572f2a1c4cefaddb67a559e5d96",
+    "revision": "d84a6421771edf77760a3eae673d7132",
     "url": "/upgrade.test/service-worker.js"
   },
   {
